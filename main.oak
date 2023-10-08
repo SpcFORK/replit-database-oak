@@ -1,0 +1,23 @@
+std := import('std')
+repldb := import('repldb')
+db := repldb.DBClient()
+
+std.println('Hello World')
+
+// setting value
+db.set('testKey', 'testValue')
+
+// getting value
+value := db.get('testKey')
+
+std.println('Value: ', value)
+keys := db.list()
+std.println(keys)
+
+// delete value
+db.delete('testKey')
+
+// list all keys
+keys := db.list()
+
+std.println(keys)
